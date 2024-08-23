@@ -37,7 +37,7 @@ def capture_screenshot_around_mouse(region_size=250):
     
     print('Mapa: '+ textoT3)
 
-# Função que aguarda o atalho Ctrl + X
+# Função que guarda o atalho Ctrl + X
 def listen_for_screenshot():
     print("Pressione Ctrl + X para capturar o screenshot.")
     while True:
