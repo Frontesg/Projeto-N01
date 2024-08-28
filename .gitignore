@@ -2,3 +2,8 @@ screenshot.png
 screenshot1.png
 screenshot2.png
 imgdownload
+node_modules
+package-lock.json
+package.json
+index.js
+

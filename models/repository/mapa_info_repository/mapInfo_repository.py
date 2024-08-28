@@ -26,7 +26,7 @@ class MapInfoRepository:
     
     def select_one(self, filter) -> Dict:
         collection = self.__db_connection.get_collection(self.__collection_name)
-        response = collection.find_one(filter, {"id": 0})
+        response = collection.find_one({"name": filter}, {"id": 0})
         return response
     
     def select_if_property_existis(self, filter) -> List[Dict]:
