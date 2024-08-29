@@ -12,11 +12,22 @@ class DBConnectionHandler:
         self.__db_connection = None
 
     def connect_to_db(self):
-        self.__client = MongoClient(self.__connection_string)
-        self.__db_connection = self.__client[self.__database_name]
+        try:
+            self.__client = MongoClient(self.__connection_string)
+            self.__db_connection = self.__client[self.__database_name]
+            print("Conectado com o db")
+        except Exception as e:
+            print(f"Erro conectar db: {e}")
+            self.__client = None
+            self.__db_connection = None
         
     def get_db_connection(self):
         return self.__db_connection
     
     def get_db_client(self):
         return self .__client
+    
+    def close_connection(self):
+        if self.__client:
+            self.__client.close()
+            print("Db Desconectado")
